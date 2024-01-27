@@ -1,0 +1,37 @@
+{% extends "HomePage.html" %}
+
+{% block block %}
+    <h1 class="text-center">Trendyol Smartphone Price Prediction</h1>
+    <form method="post" action="/">
+        {{ form.hidden_tag() }}
+        
+        {{ render_field(form.Brand, class="form-group form-control", style="text-align:center;background-color:rgba(0,0,0,0.4);color:white") }}
+        {{ render_field(form.Internal_Storage, class="form-group form-control", style="text-align:center;background-color:rgba(0,0,0,0.4);color:white") }}
+        {{ render_field(form.RAM_Capacity, class="form-group form-control", style="text-align:center;background-color:rgba(0,0,0,0.4);color:white") }}
+        {{ render_field(form.Display_Tech, class="form-group form-control", style="text-align:center;background-color:rgba(0,0,0,0.4);color:white") }}
+        {{ render_field(form.Screen_Res, class="form-group form-control", style="text-align:center;background-color:rgba(0,0,0,0.4);color:white") }}
+        {{ render_field(form.Camera_Res, class="form-group form-control", style="text-align:center;background-color:rgba(0,0,0,0.4);color:white") }}
+        {{ render_field(form.Battery_Capacity, class="form-group form-control", style="text-align:center;background-color:rgba(0,0,0,0.4);color:white") }}
+        {{ render_field(form.Connection_Speed, class="form-group form-control", style="text-align:center;background-color:rgba(0,0,0,0.4);color:white") }}
+        {{ render_field(form.Screen_Refresh_Rate, class="form-group form-control", style="text-align:center;background-color:rgba(0,0,0,0.4);color:white") }}
+        {{ render_field(form.Screen_Size, class="form-group form-control", style="text-align:center;background-color:rgba(0,0,0,0.4);color:white") }}
+        {{ render_field(form.OS, class="form-group", style="") }}
+        {{ render_field(form.Fingerprint_Scanner, class="form-group") }}
+        {{ render_field(form.Face_Recog, class="form-group") }}
+        {{ render_field(form.Water_Dust_Resistance, class="form-group") }}
+        {{ render_field(form.Dual_SIM, class="form-group") }}
+        {{ render_field(form.Card_Slot, class="form-group") }}
+        
+        <button type="submit" class="btn btn-dark" style="text-align:center;">Tahmin et</button>
+    </form>
+
+    {% if pred != -99 %}
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Tahmin: {{ pred }}</p>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

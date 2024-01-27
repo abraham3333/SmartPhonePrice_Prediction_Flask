@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Prediction</title>
+    <!-- Bootstrap CSS linkini ekleyebilirsiniz -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyOckG5S9BRG7LqGCz9m8u7FqBr1yDkF99" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Price Prediction</h1>
+
+        <form method="post">
+            {{ form.csrf_token }}
+
+            <!-- Form alanları -->
+            <div class="form-group">
+                <label for="Brand">Brand:</label>
+                {{ form.Brand(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <label for="Internal_Storage">Internal Storage:</label>
+                {{ form.Internal_Storage(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <label for="RAM_Capacity">RAM Capacity:</label>
+                {{ form.RAM_Capacity(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <label for="Display_Tech">Display Technology:</label>
+                {{ form.Display_Tech(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <label for="Screen_Res">Screen Resolution:</label>
+                {{ form.Screen_Res(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <label for="Camera_Res">Camera Resolution:</label>
+                {{ form.Camera_Res(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <label for="Battery_Capacity">Battery Capacity:</label>
+                {{ form.Battery_Capacity(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <label for="Connection_Speed">Connection Speed:</label>
+                {{ form.Connection_Speed(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <label for="Screen_Size">Screen Size:</label>
+                {{ form.Screen_Size(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <label for="Screen_Refresh_Rate">Screen Refresh Rate:</label>
+                {{ form.Screen_Refresh_Rate(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <label for="OS">OS:</label>
+                {{ form.OS(class="form-control") }}
+            </div>
+
+            <div class="form-group">
+                <label for="Fingerprint_Scanner">Fingerprint Scanner:</label>
+                {{ form.Fingerprint_Scanner(class="form-check-input") }}
+            </div>
+           
+
+            <div class="form-group">
+                <label for="Face_Recog">Face Recognition:</label>
+                {{ form.Face_Recog(class="form-check-input") }}
+            </div>
+
+            <div class="form-group">
+                <label for="Water_Dust_Resistance">Water/Dust Resistance:</label>
+                {{ form.Water_Dust_Resistance(class="form-check-input") }}
+            </div>
+
+            <div class="form-group">
+                <label for="Dual_SIM">Dual SIM:</label>
+                {{ form.Dual_SIM(class="form-check-input") }}
+            </div>
+
+            <div class="form-group">
+                <label for="Card_Slot">Card Slot:</label>
+                {{ form.Card_Slot(class="form-check-input") }}
+            </div>
+
+           
+
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+
+        {% if pred != -99 %}
+            <h2>Prediction Result:</h2>
+            <p>The predicted price is: {{ pred }}</p>
+        {% endif %}
+    </div>
+
+    <!-- Bootstrap JS ve diğer script linklerini ekleyebilirsiniz -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-OX5dDeyJ9AQKJq7aELDYuvxG6iKbe5BlP8bF6PBHgOz8H8tVZz8UmwU1yRT+I6U" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyOckG5S9BRG7LqGCz9m8u7FqBr1yDkF99" crossorigin="anonymous"></script>
+</body>
+</html>
